@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Practice Examples - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .example-card {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .example-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .company-type-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-enterprise {
+            background: #E7F3FF;
+            color: var(--linkedin-blue);
+        }
+        .badge-smb {
+            background: #FFF4E5;
+            color: #B8860B;
+        }
+        .badge-solopreneur {
+            background: #E8F5E9;
+            color: var(--success-green);
+        }
+        .page-architecture {
+            background: var(--background-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .page-list {
+            list-style: none;
+            padding: 0;
+        }
+        .page-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        .page-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--linkedin-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Best Practice Examples</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container" style="max-width: 1000px; padding: 40px 24px;">
+            <h1 style="margin-bottom: 16px;">Real-World Examples</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin-bottom: 48px;">
+                Learn from successful organizations and how they structure their LinkedIn presence
+            </p>
+
+            <!-- Microsoft Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">Microsoft</h2>
+                    <span class="company-type-badge badge-enterprise">Enterprise, Product-Led</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page:</strong> Microsoft (employer brand, corporate news, culture)</li>
+                        <li><strong>Showcase Pages:</strong> Microsoft Azure (cloud division), Microsoft 365 (productivity suite), Microsoft Gaming (Xbox ecosystem)</li>
+                        <li><strong>Product Pages:</strong> Individual products like Microsoft Teams, Power BI, Visual Studio where each has dedicated PMM and active roadmap</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Showcase Pages differentiate major business units with distinct brand identities</li>
+                    <li>Product Pages target specific buyer personas (e.g., IT admins for Teams, data analysts for Power BI)</li>
+                    <li>Governance team approves all new Pages; each has dedicated owner with budget</li>
+                </ul>
+            </div>
+
+            <!-- Deloitte Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">Deloitte</h2>
+                    <span class="company-type-badge badge-enterprise">Enterprise, Service-Led</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page:</strong> Deloitte (employer brand, thought leadership, firm-wide initiatives)</li>
+                        <li><strong>Showcase Pages:</strong> Deloitte Consulting, Deloitte Risk & Financial Advisory, Deloitte Tax (major practices)</li>
+                        <li><strong>Service Pages:</strong> Deloitte Digital (digital transformation services), Deloitte Analytics (data consulting)</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Showcase Pages represent major practice areas with independent P&Ls</li>
+                    <li>Service Pages highlight specialized offerings requiring credibility-building content</li>
+                    <li>Each Page owned by practice leader responsible for engagement strategy</li>
+                </ul>
+            </div>
+
+            <!-- Figma Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">Figma</h2>
+                    <span class="company-type-badge badge-smb">SMB/Mid-Market, Product-Led</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page only:</strong> Figma (combines employer brand, product updates, design community content)</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Single flagship product with unified brand identity</li>
+                    <li>Target audience (designers, product teams) highly cohesive</li>
+                    <li>Creating separate Product Page would fragment audience without adding value</li>
+                </ul>
+            </div>
+
+            <!-- Accenture Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">Accenture</h2>
+                    <span class="company-type-badge badge-enterprise">Enterprise, Hybrid (Services + Products)</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page:</strong> Accenture (employer brand, corporate vision, talent acquisition)</li>
+                        <li><strong>Showcase Pages:</strong> Accenture Strategy (consulting practice), Accenture Interactive (digital agency), Accenture Operations (BPO)</li>
+                        <li><strong>Service Pages:</strong> Specialized offerings like cloud migration, cybersecurity consulting</li>
+                        <li><strong>Product Pages:</strong> Proprietary platforms like myConcerto (digital business platform)</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Showcase Pages for major business units operating as distinct brands</li>
+                    <li>Service Pages emphasize advisory credibility</li>
+                    <li>Product Pages for scalable software offerings with feature-driven content</li>
+                </ul>
+            </div>
+
+            <!-- Boutique Agency Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">BrightPath Marketing</h2>
+                    <span class="company-type-badge badge-smb">SMB, Service-Led</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page:</strong> BrightPath Marketing (employer brand, case studies, agency culture)</li>
+                        <li><strong>Service Page:</strong> BrightPath SEO Services (separate Page because it targets technical SEO buyers vs general marketing directors)</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>SEO service targets distinct persona (technical marketers) with specialized content needs</li>
+                    <li>Agency has dedicated SEO practice lead who can sustain unique thought leadership</li>
+                    <li>Other services (social media, content marketing) featured on Company Page</li>
+                </ul>
+            </div>
+
+            <!-- Solopreneur Example -->
+            <div class="example-card">
+                <div class="example-header">
+                    <h2 style="margin: 0;">Sarah Chen Leadership Coaching</h2>
+                    <span class="company-type-badge badge-solopreneur">Solopreneur, Service-Led</span>
+                </div>
+                
+                <div class="page-architecture">
+                    <h4 style="margin-bottom: 12px;">Page Architecture:</h4>
+                    <ul class="page-list">
+                        <li><strong>Company Page only:</strong> Sarah Chen Leadership Coaching (personal brand, client testimonials, thought leadership)</li>
+                    </ul>
+                </div>
+
+                <h4 style="margin-top: 20px; margin-bottom: 12px;">Rationale:</h4>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li>Single service offering closely tied to founder's personal brand</li>
+                    <li>Cannot sustain content velocity across multiple Pages</li>
+                    <li>Target audience (executives seeking coaching) follows for Sarah's expertise, not a separate service brand</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px; padding: 32px; background: var(--background-primary); border-radius: 8px;">
+                <h3 style="margin-bottom: 16px;">Ready to structure your LinkedIn presence?</h3>
+                <a href="decision-tree.html" class="btn btn-primary">Use the Decision Tree</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+</body>
+</html>

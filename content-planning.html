@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Planning - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .content-tool-card {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s ease;
+        }
+        .content-tool-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        .tool-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .frequency-calculator {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .result-box {
+            background: #E7F3FF;
+            border-left: 4px solid var(--linkedin-blue);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .content-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .content-type-card {
+            background: var(--background-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .calendar-template {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .calendar-week {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .calendar-day {
+            background: var(--background-secondary);
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .calendar-day.header {
+            font-weight: 600;
+            background: var(--linkedin-blue);
+            color: white;
+        }
+        .posting-idea {
+            background: var(--background-primary);
+            border-left: 3px solid var(--linkedin-blue);
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Content Planning</li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container" style="max-width: 1100px; padding: 40px 24px;">
+            <h1>Content Planning Tools</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin: 16px 0 48px 0;">
+                Templates and strategies to maintain content velocity and audience engagement
+            </p>
+
+            <!-- Posting Frequency Calculator -->
+            <section>
+                <h2>Posting Frequency Calculator</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Determine the right posting cadence for your page type and resources</p>
+                
+                <div class="frequency-calculator">
+                    <div class="form-group">
+                        <label for="pageType">What type of page are you managing?</label>
+                        <select id="pageType" onchange="calculateFrequency()">
+                            <option value="">Select page type...</option>
+                            <option value="company">Company Page</option>
+                            <option value="showcase">Showcase Page</option>
+                            <option value="product">Product Page</option>
+                            <option value="service">Service Page</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teamSize">How many people can contribute content?</label>
+                        <select id="teamSize" onchange="calculateFrequency()">
+                            <option value="">Select team size...</option>
+                            <option value="1">Just me (1 person)</option>
+                            <option value="2-3">Small team (2-3 people)</option>
+                            <option value="4-10">Medium team (4-10 people)</option>
+                            <option value="10+">Large team (10+ people)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentTime">How much time per week can you dedicate to content?</label>
+                        <select id="contentTime" onchange="calculateFrequency()">
+                            <option value="">Select time commitment...</option>
+                            <option value="1-2">1-2 hours per week</option>
+                            <option value="3-5">3-5 hours per week</option>
+                            <option value="6-10">6-10 hours per week</option>
+                            <option value="10+">10+ hours per week</option>
+                        </select>
+                    </div>
+
+                    <div id="frequencyResult" style="display: none;" class="result-box">
+                        <!-- Result will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Type Mix -->
+            <section style="margin-top: 64px;">
+                <h2>Content Type Mix</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Balance different content types to keep your audience engaged</p>
+
+                <div class="content-types-grid">
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">📰 Company News (20%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Company updates, milestones, awards, new hires, office openings</p>
+                    </div>
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">💡 Thought Leadership (25%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Industry insights, trends, expert perspectives, research findings</p>
+                    </div>
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">🎯 Product/Service Updates (20%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Feature releases, case studies, use cases, customer success stories</p>
+                    </div>
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">👥 Culture & People (15%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Employee spotlights, team activities, values in action, DEI initiatives</p>
+                    </div>
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">🤝 Community Engagement (10%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Questions, polls, celebrations, trending topics, conversations</p>
+                    </div>
+                    <div class="content-type-card">
+                        <h4 style="margin-bottom: 8px;">📚 Educational Content (10%)</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">How-to guides, tips, webinars, whitepapers, resources</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 24px;">
+                    <p><strong>Pro Tip:</strong> These percentages are guidelines, not rigid rules. Adjust based on your audience's preferences and engagement patterns.</p>
+                </div>
+            </section>
+
+            <!-- Monthly Content Ideas -->
+            <section style="margin-top: 64px;">
+                <h2>Monthly Content Ideas Generator</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Get fresh ideas for your content calendar</p>
+
+                <div class="form-group" style="max-width: 500px;">
+                    <label for="industrySelect">Select your industry:</label>
+                    <select id="industrySelect" onchange="generateIdeas()">
+                        <option value="">Choose industry...</option>
+                        <option value="tech">Technology/SaaS</option>
+                        <option value="consulting">Consulting/Professional Services</option>
+                        <option value="finance">Financial Services</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="retail">Retail/E-commerce</option>
+                        <option value="manufacturing">Manufacturing</option>
+                    </select>
+                </div>
+
+                <div id="contentIdeas" style="display: none; margin-top: 24px;">
+                    <!-- Ideas will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Content Calendar Template -->
+            <section style="margin-top: 64px;">
+                <h2>Content Calendar Best Practices</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Structure your content planning for maximum efficiency</p>
+
+                <div class="content-tool-grid">
+                    <div class="content-tool-card">
+                        <div class="tool-icon">📅</div>
+                        <h3 style="margin-bottom: 12px;">Plan Ahead</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Create content 2-4 weeks in advance to maintain consistency and quality</p>
+                    </div>
+                    <div class="content-tool-card">
+                        <div class="tool-icon">🎨</div>
+                        <h3 style="margin-bottom: 12px;">Batch Creation</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Create multiple posts in one session for greater efficiency</p>
+                    </div>
+                    <div class="content-tool-card">
+                        <div class="tool-icon">⏰</div>
+                        <h3 style="margin-bottom: 12px;">Optimal Timing</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Post during business hours: Tuesday-Thursday, 8am-10am or 12pm-2pm</p>
+                    </div>
+                    <div class="content-tool-card">
+                        <div class="tool-icon">📊</div>
+                        <h3 style="margin-bottom: 12px;">Track Performance</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Monitor engagement rates and adjust strategy based on results</p>
+                    </div>
+                    <div class="content-tool-card">
+                        <div class="tool-icon">🔄</div>
+                        <h3 style="margin-bottom: 12px;">Repurpose Content</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Adapt blog posts, videos, or presentations into multiple LinkedIn posts</p>
+                    </div>
+                    <div class="content-tool-card">
+                        <div class="tool-icon">💬</div>
+                        <h3 style="margin-bottom: 12px;">Engage Actively</h3>
+                        <p style="color: var(--text-secondary); font-size: 14px;">Respond to comments within 24 hours to boost engagement</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips -->
+            <section style="margin-top: 64px;">
+                <h2>Content Velocity Tips</h2>
+                <div class="success-box">
+                    <h4 style="margin-bottom: 12px;">✓ Maintain Consistent Posting</h4>
+                    <ul style="padding-left: 24px; margin: 12px 0;">
+                        <li>Company Pages: 1-2 times per week minimum</li>
+                        <li>Showcase Pages: 2-3 times per week (or use Audience Targeting)</li>
+                        <li>Product Pages: 1-2 times per month minimum</li>
+                        <li>Service Pages: 2-4 times per month minimum</li>
+                    </ul>
+                </div>
+
+                <div class="info-box" style="margin-top: 24px;">
+                    <h4 style="margin-bottom: 12px;">💡 Quick Content Ideas</h4>
+                    <ul style="padding-left: 24px; margin: 12px 0;">
+                        <li>Share and comment on industry news</li>
+                        <li>Celebrate team wins and milestones</li>
+                        <li>Ask your audience questions</li>
+                        <li>Share behind-the-scenes content</li>
+                        <li>Highlight customer success stories</li>
+                        <li>Announce upcoming events or webinars</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+    <script src="content-planning.js"></script>
+</body>
+</html>

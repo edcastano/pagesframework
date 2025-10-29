@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklists - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checklist-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        .checklist-option {
+            background: var(--background-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .checklist-option:hover {
+            border-color: var(--linkedin-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(10, 102, 194, 0.15);
+        }
+        .checklist-option.active {
+            border-color: var(--linkedin-blue);
+            background: #E7F3FF;
+        }
+        .checklist-icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+        .checklist-container {
+            background: var(--background-primary);
+            border-radius: 8px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+        }
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s ease;
+        }
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        .checklist-item:hover {
+            background: var(--background-secondary);
+        }
+        .checkbox-custom {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .checkbox-custom.checked {
+            background: var(--linkedin-blue);
+            border-color: var(--linkedin-blue);
+        }
+        .checkbox-custom.checked::after {
+            content: "✓";
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .checklist-text {
+            flex: 1;
+        }
+        .checklist-text h4 {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+        .checklist-text p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin: 0;
+        }
+        .progress-summary {
+            background: var(--background-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .progress-text {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .progress-percentage {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--linkedin-blue);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Checklists</li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container" style="max-width: 1000px; padding: 40px 24px;">
+            <h1>Interactive Checklists</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin: 16px 0 48px 0;">
+                Step-by-step guidance for setting up and managing your LinkedIn Pages
+            </p>
+
+            <h2 style="margin-bottom: 24px;">Select a Checklist</h2>
+            <div class="checklist-selector" id="checklistSelector">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <div id="checklistContent" style="display: none;">
+                <div class="progress-summary" id="progressSummary">
+                    <span class="progress-text">Progress: <span id="progressCount">0/0</span> completed</span>
+                    <span class="progress-percentage" id="progressPercent">0%</span>
+                </div>
+
+                <div class="checklist-container" id="checklistItems">
+                    <!-- Populated by JavaScript -->
+                </div>
+
+                <div style="text-align: center; margin-top: 32px;">
+                    <button class="btn btn-secondary" onclick="resetChecklist()">Reset Checklist</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+    <script src="checklists.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naming Standards - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .naming-guidelines {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+        .guideline-item {
+            display: flex;
+            gap: 16px;
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .guideline-item:last-child {
+            border-bottom: none;
+        }
+        .guideline-icon {
+            font-size: 24px;
+            min-width: 32px;
+        }
+        .validator-tool {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        .name-input-group {
+            margin: 24px 0;
+        }
+        .name-input {
+            width: 100%;
+            padding: 16px;
+            font-size: 18px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
+        }
+        .name-input:focus {
+            outline: none;
+            border-color: var(--linkedin-blue);
+        }
+        .validation-result {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        .validation-result.valid {
+            background: #E8F5E9;
+            border: 2px solid var(--success-green);
+            display: block;
+        }
+        .validation-result.warning {
+            background: #FFF4E5;
+            border: 2px solid var(--warning-orange);
+            display: block;
+        }
+        .validation-result.invalid {
+            background: #FFE5E5;
+            border: 2px solid var(--error-red);
+            display: block;
+        }
+        .issue-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0;
+        }
+        .issue-item {
+            padding: 8px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+        .examples-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .example-box {
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .good-example {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success-green);
+        }
+        .bad-example {
+            background: #FFE5E5;
+            border-left: 4px solid var(--error-red);
+        }
+        @media (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Naming Standards</li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container" style="max-width: 1000px; padding: 40px 24px;">
+            <h1>Naming Standards</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin: 16px 0 48px 0;">
+                Guidelines and validation tools for clear, searchable, and brand-consistent page names
+            </p>
+
+            <!-- Name Validator Tool -->
+            <section>
+                <h2>Page Name Validator</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Test your proposed page name against LinkedIn best practices</p>
+
+                <div class="validator-tool">
+                    <div class="name-input-group">
+                        <label for="pageNameInput" style="display: block; font-weight: 600; margin-bottom: 12px; font-size: 16px;">Enter your proposed page name:</label>
+                        <input 
+                            type="text" 
+                            id="pageNameInput" 
+                            class="name-input" 
+                            placeholder="e.g., Microsoft Azure, Deloitte Digital, Acme Corp"
+                            oninput="validateName()"
+                        >
+                    </div>
+
+                    <div class="name-input-group">
+                        <label for="pageTypeSelect" style="display: block; font-weight: 600; margin-bottom: 12px; font-size: 16px;">Page type:</label>
+                        <select id="pageTypeSelect" style="width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: 8px; font-size: 16px;" onchange="validateName()">
+                            <option value="">Select page type...</option>
+                            <option value="company">Company Page</option>
+                            <option value="showcase">Showcase Page</option>
+                            <option value="product">Product Page</option>
+                            <option value="service">Service Page</option>
+                        </select>
+                    </div>
+
+                    <div id="validationResult" class="validation-result">
+                        <!-- Results will be inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Naming Guidelines -->
+            <section style="margin-top: 64px;">
+                <h2>Naming Guidelines by Page Type</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Follow these standards to create clear, findable page names</p>
+
+                <div class="naming-guidelines">
+                    <div class="guideline-item">
+                        <div class="guideline-icon">🏢</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Company Page</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">Use your official, legal business name or widely recognized brand name.</p>
+                            <p style="font-size: 14px;"><strong>Format:</strong> [Company Name]</p>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Examples: Microsoft, Deloitte, Salesforce</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">⭐</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Showcase Page</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">Combine parent company name with sub-brand, division, or regional identifier.</p>
+                            <p style="font-size: 14px;"><strong>Format:</strong> [Company Name] [Sub-Brand/Division]</p>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Examples: Microsoft Azure, Deloitte Consulting, IBM Cloud</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">📦</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Product Page</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">Use specific product name. Include parent company if product name alone isn't distinctive.</p>
+                            <p style="font-size: 14px;"><strong>Format:</strong> [Product Name] or [Company] [Product Name]</p>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Examples: Microsoft Teams, Salesforce Einstein, Adobe Photoshop</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">💼</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Service Page</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">Combine company name with service area or practice name.</p>
+                            <p style="font-size: 14px;"><strong>Format:</strong> [Company Name] [Service Area]</p>
+                            <p style="font-size: 14px; color: var(--text-secondary);">Examples: Deloitte Digital, Accenture Strategy, KPMG Cybersecurity</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- General Best Practices -->
+            <section style="margin-top: 64px;">
+                <h2>Universal Naming Best Practices</h2>
+                
+                <div class="naming-guidelines">
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Keep It Clear & Concise</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Aim for 2-4 words maximum. Long names get truncated in search results and mobile views.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Use Proper Capitalization</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Follow standard title case or your brand's official capitalization. Avoid ALL CAPS or aLtErNaTiNg CaSe.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Be Searchable</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Include keywords that your target audience would search for. Think about how people would look for you.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Maintain Consistency</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Use the same naming pattern across all your pages for brand recognition.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Avoid Redundancy</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Don't include "Official," "Inc.," "LLC," or "Page" unless legally required or part of your brand.</p>
+                        </div>
+                    </div>
+
+                    <div class="guideline-item">
+                        <div class="guideline-icon">✓</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">No Special Characters</h4>
+                            <p style="color: var(--text-secondary); font-size: 14px;">Avoid symbols like ™, ®, ©, or excessive punctuation. Stick to letters, numbers, hyphens, and ampersands.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Examples: Good vs. Bad -->
+            <section style="margin-top: 64px;">
+                <h2>Examples: Good vs. Bad Names</h2>
+                
+                <h3 style="margin-top: 32px; margin-bottom: 16px;">Company Pages</h3>
+                <div class="examples-grid">
+                    <div class="example-box good-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--success-green); margin-bottom: 8px;">✓ Good</p>
+                        <p style="margin: 0; font-size: 14px;">Acme Corporation</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Clean, official name</p>
+                    </div>
+                    <div class="example-box bad-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--error-red); margin-bottom: 8px;">✗ Avoid</p>
+                        <p style="margin: 0; font-size: 14px;">ACME Corporation™ - Official Page</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">All caps, symbol, redundant</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px;">Showcase Pages</h3>
+                <div class="examples-grid">
+                    <div class="example-box good-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--success-green); margin-bottom: 8px;">✓ Good</p>
+                        <p style="margin: 0; font-size: 14px;">Microsoft Azure</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Clear parent and sub-brand</p>
+                    </div>
+                    <div class="example-box bad-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--error-red); margin-bottom: 8px;">✗ Avoid</p>
+                        <p style="margin: 0; font-size: 14px;">Microsoft Cloud Computing Services Azure Platform</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Too long and keyword-stuffed</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px;">Product Pages</h3>
+                <div class="examples-grid">
+                    <div class="example-box good-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--success-green); margin-bottom: 8px;">✓ Good</p>
+                        <p style="margin: 0; font-size: 14px;">Salesforce Einstein</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Distinctive product name with parent</p>
+                    </div>
+                    <div class="example-box bad-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--error-red); margin-bottom: 8px;">✗ Avoid</p>
+                        <p style="margin: 0; font-size: 14px;">Einstein (AI Product)</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Missing parent company, unclear</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 32px; margin-bottom: 16px;">Service Pages</h3>
+                <div class="examples-grid">
+                    <div class="example-box good-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--success-green); margin-bottom: 8px;">✓ Good</p>
+                        <p style="margin: 0; font-size: 14px;">Deloitte Digital</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Firm name plus service practice</p>
+                    </div>
+                    <div class="example-box bad-example">
+                        <p style="margin: 0; font-weight: 600; color: var(--error-red); margin-bottom: 8px;">✗ Avoid</p>
+                        <p style="margin: 0; font-size: 14px;">Digital Transformation Services by Deloitte</p>
+                        <p style="margin: 4px 0 0 0; font-size: 13px; color: var(--text-secondary);">Too wordy, awkward structure</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Tips -->
+            <section style="margin-top: 64px;">
+                <h2>Quick Naming Tips</h2>
+                <div class="info-box">
+                    <h4 style="margin-bottom: 12px;">💡 Before Finalizing Your Name:</h4>
+                    <ul style="padding-left: 24px; margin: 12px 0; line-height: 1.8;">
+                        <li>Search LinkedIn to see if similar names exist</li>
+                        <li>Say it out loud - does it sound natural?</li>
+                        <li>Check how it looks on mobile (truncates after ~25 characters)</li>
+                        <li>Get feedback from colleagues in your target audience</li>
+                        <li>Ensure it aligns with other brand touchpoints (website, etc.)</li>
+                        <li>Verify it follows your company's brand guidelines</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+    <script src="naming-standards.js"></script>
+</body>
+</html>

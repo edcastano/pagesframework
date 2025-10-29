@@ -1,0 +1,437 @@
+/* LinkedIn Brand Colors */
+:root {
+    --linkedin-blue: #0A66C2;
+    --linkedin-blue-dark: #004182;
+    --linkedin-blue-light: #378FE9;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --text-tertiary: #00000099;
+    --background-primary: #FFFFFF;
+    --background-secondary: #F3F2EF;
+    --border-color: #D9D9D9;
+    --success-green: #057642;
+    --warning-orange: #F5C75D;
+    --error-red: #CC1016;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    background-color: var(--background-secondary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+.header {
+    background-color: var(--background-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--linkedin-blue) 0%, var(--linkedin-blue-dark) 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 32px;
+    opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--linkedin-blue);
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* Features Section */
+.features {
+    padding: 80px 0;
+    background-color: var(--background-secondary);
+}
+
+.features h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background-color: var(--background-primary);
+    border-radius: 8px;
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.feature-link {
+    color: var(--linkedin-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.feature-link:hover {
+    color: var(--linkedin-blue-dark);
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--background-primary);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--background-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 32px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: var(--text-tertiary);
+}
+
+/* Decision Tree Specific Styles */
+.decision-tree-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.decision-node {
+    background-color: var(--background-primary);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+.decision-node.active {
+    border: 2px solid var(--linkedin-blue);
+    box-shadow: 0 4px 12px rgba(10, 102, 194, 0.15);
+}
+
+.node-question {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+.node-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    background-color: var(--background-secondary);
+    border: 2px solid var(--border-color);
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-primary);
+}
+
+.option-btn:hover {
+    border-color: var(--linkedin-blue);
+    background-color: #E7F3FF;
+}
+
+.option-btn:active {
+    transform: scale(0.98);
+}
+
+.result-card {
+    background: linear-gradient(135deg, #E7F3FF 0%, #D4E9FF 100%);
+    border: 2px solid var(--linkedin-blue);
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 24px;
+}
+
+.result-card ul {
+    padding-left: 24px;
+    margin: 12px 0;
+}
+
+.result-card ol {
+    padding-left: 24px;
+    margin: 12px 0;
+}
+
+.result-card li {
+    margin: 8px 0;
+}
+
+.result-card h3 {
+    color: var(--linkedin-blue);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.result-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb {
+    background-color: var(--background-primary);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb-list {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    list-style: none;
+}
+
+.breadcrumb-item {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.breadcrumb-separator {
+    color: var(--text-tertiary);
+}
+
+.progress-bar {
+    background-color: var(--background-secondary);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.progress-fill {
+    background-color: var(--linkedin-blue);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.reset-btn {
+    background-color: transparent;
+    color: var(--linkedin-blue);
+    border: 2px solid var(--linkedin-blue);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+    background-color: var(--linkedin-blue);
+    color: white;
+}
+
+.info-box {
+    background-color: #FFF4E5;
+    border-left: 4px solid var(--warning-orange);
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+.info-box p {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.success-box {
+    background-color: #E8F5E9;
+    border-left: 4px solid var(--success-green);
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+}
+
+.success-box p {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .features h2,
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

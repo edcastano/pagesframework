@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Governance Tools - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .governance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        .governance-card {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+        }
+        .role-card {
+            background: var(--background-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--linkedin-blue);
+        }
+        .workflow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: var(--background-secondary);
+            border-radius: 8px;
+        }
+        .step-number {
+            background: var(--linkedin-blue);
+            color: white;
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .template-section {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        .org-size-selector {
+            display: flex;
+            gap: 12px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        .org-size-btn {
+            padding: 12px 24px;
+            border: 2px solid var(--border-color);
+            background: var(--background-primary);
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+        .org-size-btn:hover {
+            border-color: var(--linkedin-blue);
+        }
+        .org-size-btn.active {
+            background: var(--linkedin-blue);
+            color: white;
+            border-color: var(--linkedin-blue);
+        }
+        .responsibility-list {
+            background: var(--background-secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .audit-checklist-item {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .audit-checklist-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Governance Tools</li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container" style="max-width: 1100px; padding: 40px 24px;">
+            <h1>Governance Tools</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin: 16px 0 48px 0;">
+                Templates for roles, responsibilities, and workflows to ensure effective page management
+            </p>
+
+            <!-- Governance Structure by Org Size -->
+            <section>
+                <h2>Governance Structure Templates</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Select your organization size to see recommended governance structure</p>
+
+                <div class="org-size-selector">
+                    <button class="org-size-btn active" onclick="showGovernance('solopreneur')">Solopreneur</button>
+                    <button class="org-size-btn" onclick="showGovernance('smb')">SMB (2-50)</button>
+                    <button class="org-size-btn" onclick="showGovernance('midmarket')">Mid-Market (51-500)</button>
+                    <button class="org-size-btn" onclick="showGovernance('enterprise')">Enterprise (500+)</button>
+                </div>
+
+                <div id="governanceStructure" class="template-section">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Content Approval Workflow -->
+            <section style="margin-top: 64px;">
+                <h2>Content Approval Workflow</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Establish a clear process for content creation and publishing</p>
+
+                <div class="governance-card">
+                    <h3 style="margin-bottom: 20px;">Standard Approval Process</h3>
+                    
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Content Creation</h4>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 14px;">Team member drafts post with copy, images, and hashtags. Saves as draft in content management system.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Manager Review</h4>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 14px;">Direct manager reviews for accuracy, brand voice, and alignment with strategy. Provides feedback or approves.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Legal/Compliance Check (if needed)</h4>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 14px;">For regulated industries or sensitive topics, legal team reviews for compliance. Required for financial claims, medical advice, etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Page Owner Final Approval</h4>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 14px;">Page owner gives final sign-off and schedules post for optimal timing.</p>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div>
+                            <h4 style="margin-bottom: 8px;">Publish & Monitor</h4>
+                            <p style="color: var(--text-secondary); margin: 0; font-size: 14px;">Post goes live. Team monitors comments and engagement in first 24-48 hours for rapid response.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 24px;">
+                    <p><strong>💡 Streamlined Process for Time-Sensitive Content:</strong> Create an expedited approval track for timely posts (news reactions, event coverage). Pre-approve themes and designate who can use fast-track approval.</p>
+                </div>
+            </section>
+
+            <!-- Page Roles & Responsibilities -->
+            <section style="margin-top: 64px;">
+                <h2>Page Roles & Responsibilities</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Clear role definitions ensure accountability and efficiency</p>
+
+                <div class="governance-grid">
+                    <div class="governance-card">
+                        <h3 style="margin-bottom: 16px;">🎯 Page Owner</h3>
+                        <div class="responsibility-list">
+                            <p style="font-size: 14px; margin-bottom: 12px;"><strong>Key Responsibilities:</strong></p>
+                            <ul style="padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-secondary);">
+                                <li>Overall page strategy and goals</li>
+                                <li>Content calendar planning</li>
+                                <li>Performance monitoring and reporting</li>
+                                <li>Budget management (if applicable)</li>
+                                <li>Stakeholder communication</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 14px; margin-top: 12px; color: var(--text-secondary);"><strong>Typical Role:</strong> Marketing Manager, Brand Manager, Communications Director</p>
+                    </div>
+
+                    <div class="governance-card">
+                        <h3 style="margin-bottom: 16px;">✍️ Content Creator</h3>
+                        <div class="responsibility-list">
+                            <p style="font-size: 14px; margin-bottom: 12px;"><strong>Key Responsibilities:</strong></p>
+                            <ul style="padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-secondary);">
+                                <li>Drafting posts and copy</li>
+                                <li>Sourcing or creating visuals</li>
+                                <li>Research and fact-checking</li>
+                                <li>Writing in brand voice</li>
+                                <li>Meeting content deadlines</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 14px; margin-top: 12px; color: var(--text-secondary);"><strong>Typical Role:</strong> Content Marketer, Social Media Specialist, Copywriter</p>
+                    </div>
+
+                    <div class="governance-card">
+                        <h3 style="margin-bottom: 16px;">👤 Page Admin</h3>
+                        <div class="responsibility-list">
+                            <p style="font-size: 14px; margin-bottom: 12px;"><strong>Key Responsibilities:</strong></p>
+                            <ul style="padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-secondary);">
+                                <li>Publishing approved content</li>
+                                <li>Monitoring comments and engagement</li>
+                                <li>Responding to inquiries</li>
+                                <li>Managing page settings</li>
+                                <li>Adding/removing team members</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 14px; margin-top: 12px; color: var(--text-secondary);"><strong>Typical Role:</strong> Social Media Manager, Community Manager</p>
+                    </div>
+
+                    <div class="governance-card">
+                        <h3 style="margin-bottom: 16px;">✅ Approver</h3>
+                        <div class="responsibility-list">
+                            <p style="font-size: 14px; margin-bottom: 12px;"><strong>Key Responsibilities:</strong></p>
+                            <ul style="padding-left: 20px; margin: 0; font-size: 14px; color: var(--text-secondary);">
+                                <li>Reviewing content for accuracy</li>
+                                <li>Ensuring brand compliance</li>
+                                <li>Legal/regulatory review (if needed)</li>
+                                <li>Strategic alignment check</li>
+                                <li>Final approval to publish</li>
+                            </ul>
+                        </div>
+                        <p style="font-size: 14px; margin-top: 12px; color: var(--text-secondary);"><strong>Typical Role:</strong> Marketing Director, Legal Counsel (for sensitive content)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quarterly Audit Checklist -->
+            <section style="margin-top: 64px;">
+                <h2>Quarterly Governance Audit</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Review your page governance every quarter to maintain quality and relevance</p>
+
+                <div class="template-section">
+                    <h3 style="margin-bottom: 20px;">Audit Checklist</h3>
+                    
+                    <div class="audit-checklist-item">
+                        <strong>□ Page Inventory</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">List all active Company, Showcase, Product, and Service Pages. Verify each still serves a strategic purpose.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Posting Frequency Review</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Check if each page meets minimum posting requirements. Flag pages with infrequent updates.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Engagement Analysis</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Review engagement rates (likes, comments, shares). Identify high and low performers.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Follower Growth</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Track follower growth trends. Investigate pages with declining followers.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Admin Access Review</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Verify all admins are current employees with appropriate permissions. Remove departed staff.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Page Information Accuracy</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Update company descriptions, logos, locations, and contact information as needed.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Content Strategy Alignment</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Ensure content aligns with current business priorities and marketing campaigns.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Duplicate Page Check</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Identify any redundant pages that could be consolidated or archived.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Dormant Page Decision</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">For pages inactive 90+ days: reactivate with content plan, merge with Company Page, or sunset gracefully.</p>
+                    </div>
+
+                    <div class="audit-checklist-item">
+                        <strong>□ Process Documentation</strong>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 8px 0 0 0;">Document audit findings and action items. Update governance documentation as needed.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Practices -->
+            <section style="margin-top: 64px;">
+                <h2>Governance Best Practices</h2>
+                <div class="governance-grid">
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">📋 Document Everything</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Create written guidelines for page creation, content approval, and admin access. Make them easily accessible to the team.</p>
+                    </div>
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">🎯 Single Source of Truth</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Maintain a central spreadsheet or database tracking all pages, owners, admins, and performance metrics.</p>
+                    </div>
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">✅ Approval Thresholds</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Define what content types require legal review (e.g., financial claims, medical advice) vs. standard approval.</p>
+                    </div>
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">🔄 Regular Audits</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Schedule quarterly reviews to catch dormant pages, update admin access, and ensure strategic alignment.</p>
+                    </div>
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">🚦 Page Creation Criteria</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Require business case and content plan before approving new pages. Prevent page proliferation.</p>
+                    </div>
+                    <div class="governance-card">
+                        <h4 style="margin-bottom: 12px;">📊 Performance Standards</h4>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Set minimum posting frequency and engagement benchmarks. Review underperforming pages quarterly.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+    <script src="governance.js"></script>
+</body>
+</html>

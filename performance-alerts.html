@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Alerts - LinkedIn Company Page Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .alert-category {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+        .alert-level {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .alert-critical {
+            background: #FFE5E5;
+            color: var(--error-red);
+        }
+        .alert-warning {
+            background: #FFF4E5;
+            color: #B8860B;
+        }
+        .alert-info {
+            background: #E7F3FF;
+            color: var(--linkedin-blue);
+        }
+        .metric-card {
+            background: var(--background-secondary);
+            border-left: 4px solid var(--linkedin-blue);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--linkedin-blue);
+        }
+        .benchmark-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .benchmark-box {
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .benchmark-good {
+            background: #E8F5E9;
+            border: 2px solid var(--success-green);
+        }
+        .benchmark-poor {
+            background: #FFE5E5;
+            border: 2px solid var(--error-red);
+        }
+        .action-list {
+            background: var(--background-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+        .action-item {
+            display: flex;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .action-item:last-child {
+            border-bottom: none;
+        }
+        .action-priority {
+            font-weight: 700;
+            min-width: 80px;
+        }
+        .priority-high {
+            color: var(--error-red);
+        }
+        .priority-medium {
+            color: var(--warning-orange);
+        }
+        .priority-low {
+            color: var(--success-green);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+                    <rect width="34" height="34" rx="4" fill="#0A66C2"/>
+                    <path d="M11.5 9.5C11.5 10.328 10.828 11 10 11C9.172 11 8.5 10.328 8.5 9.5C8.5 8.672 9.172 8 10 8C10.828 8 11.5 8.672 11.5 9.5ZM11.5 12.5H8.5V25.5H11.5V12.5ZM17.586 12.5H14.614V25.5H17.586V18.575C17.586 15.85 21.236 15.587 21.236 18.575V25.5H24.214V17.262C24.214 12.337 18.85 12.525 17.586 14.762V12.5Z" fill="white"/>
+                </svg>
+                <span>Company Page Guidance</span>
+            </div>
+        </div>
+    </header>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">›</li>
+                <li class="breadcrumb-item active">Performance Alerts</li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container" style="max-width: 1100px; padding: 40px 24px;">
+            <h1>Performance Alerts</h1>
+            <p style="color: var(--text-secondary); font-size: 18px; margin: 16px 0 48px 0;">
+                Understand warning signs and get recommendations to improve page performance
+            </p>
+
+            <div class="info-box">
+                <p><strong>📊 Note:</strong> These metrics and benchmarks are educational guidelines. Actual performance tracking requires access to LinkedIn Page Analytics. Use these guidelines to interpret your real data.</p>
+            </div>
+
+            <!-- Critical Alerts -->
+            <section style="margin-top: 48px;">
+                <h2>🚨 Critical Alerts</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Address these issues immediately as they significantly harm your page effectiveness</p>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-critical">Critical</span>
+                    <h3>Dormant Page (No Posts in 90+ Days)</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Your page hasn't posted in over 3 months. This signals to LinkedIn and your audience that the page is abandoned.</p>
+                    
+                    <h4 style="margin-top: 20px; margin-bottom: 12px;">Why This Matters:</h4>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 1.8;">
+                        <li>Algorithm deprioritizes inactive pages in search and recommendations</li>
+                        <li>Followers stop engaging and may unfollow</li>
+                        <li>New visitors question if your business is still active</li>
+                        <li>Wastes your existing follower base</li>
+                    </ul>
+
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Immediate Actions:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Decide: reactivate with content plan, merge with Company Page, or sunset gracefully with final post explaining transition</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>If reactivating: create and schedule 10-15 posts immediately to rebuild momentum</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Assign a dedicated owner responsible for maintaining posting cadence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-critical">Critical</span>
+                    <h3>Declining Follower Count</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Your page is losing more followers than it's gaining, indicating content isn't resonating or page is becoming irrelevant.</p>
+                    
+                    <h4 style="margin-top: 20px; margin-bottom: 12px;">Common Causes:</h4>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 1.8;">
+                        <li>Content doesn't align with follower expectations</li>
+                        <li>Posting too frequently (spam perception)</li>
+                        <li>Overly promotional content with no value</li>
+                        <li>Page pivot without communicating to audience</li>
+                    </ul>
+
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Immediate Actions:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Audit last 20 posts - identify which had lowest engagement and why</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Survey followers (if list available) to understand their interests</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Reduce posting frequency if > 5x/week and test quality over quantity</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Shift content mix: increase thought leadership and educational content, decrease promotions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-critical">Critical</span>
+                    <h3>Engagement Rate Below 1%</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Your posts are getting less than 1% engagement (likes + comments + shares divided by impressions), well below industry benchmarks.</p>
+                    
+                    <div class="benchmark-comparison">
+                        <div class="benchmark-box benchmark-poor">
+                            <div style="font-size: 24px; font-weight: 700; color: var(--error-red); margin-bottom: 8px;">< 1%</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">Your Current Rate</div>
+                        </div>
+                        <div class="benchmark-box benchmark-good">
+                            <div style="font-size: 24px; font-weight: 700; color: var(--success-green); margin-bottom: 8px;">2-5%</div>
+                            <div style="font-size: 14px; color: var(--text-secondary);">Industry Benchmark</div>
+                        </div>
+                    </div>
+
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Immediate Actions:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Test different content formats: video performs 5x better than text-only</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-high">HIGH:</span>
+                            <span>Add clear calls-to-action: ask questions, request opinions, invite comments</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Post during optimal times: Tuesday-Thursday, 8-10am or 12-2pm</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Respond to every comment within 2 hours to boost algorithmic ranking</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Warning Alerts -->
+            <section style="margin-top: 64px;">
+                <h2>⚠️ Warning Alerts</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Address these issues soon to prevent performance degradation</p>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-warning">Warning</span>
+                    <h3>Inconsistent Posting Schedule</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Your posting frequency varies wildly (e.g., 5 posts one week, then 0 for two weeks). Consistency matters more than volume.</p>
+                    
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Actions to Take:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Set a realistic posting schedule you can maintain (1-2x/week is better than bursts)</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Use LinkedIn's scheduling feature to maintain consistency during busy periods</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-low">LOW:</span>
+                            <span>Batch-create content: make 8-10 posts in one session to build a buffer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-warning">Warning</span>
+                    <h3>Low Reach Compared to Follower Count</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Your posts only reach 10-20% of your followers, indicating algorithm isn't prioritizing your content.</p>
+                    
+                    <h4 style="margin-top: 20px; margin-bottom: 12px;">Why This Happens:</h4>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 1.8;">
+                        <li>LinkedIn algorithm deprioritizes pages with low historical engagement</li>
+                        <li>Content isn't generating engagement signals (likes, comments, shares) quickly</li>
+                        <li>Posting at suboptimal times when followers aren't active</li>
+                    </ul>
+
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Actions to Take:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Encourage employees to engage with posts within first hour (this signals quality to algorithm)</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Tag relevant employees or partners in posts (when appropriate) to expand reach</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-low">LOW:</span>
+                            <span>Experiment with posting times - analyze when your audience is most active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-warning">Warning</span>
+                    <h3>Low Click-Through Rate on Posts</h3>
+                    <p style="color: var(--text-secondary); margin: 12px 0;">Posts with links get impressions but very few clicks, suggesting content isn't compelling enough or CTA is weak.</p>
+                    
+                    <div class="action-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 16px;">Actions to Take:</h4>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Tease value in post copy before link - explain what they'll learn/gain</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-medium">MEDIUM:</span>
+                            <span>Test native content vs. links - LinkedIn algorithm favors keeping users on platform</span>
+                        </div>
+                        <div class="action-item">
+                            <span class="action-priority priority-low">LOW:</span>
+                            <span>Use clear CTAs: "Read our guide on..." rather than "Check this out"</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Informational Metrics -->
+            <section style="margin-top: 64px;">
+                <h2>ℹ️ Metrics to Monitor</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">Track these metrics regularly to spot trends before they become problems</p>
+
+                <div class="alert-category">
+                    <span class="alert-level alert-info">Monitor</span>
+                    <h3>Key Metrics Dashboard</h3>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4 style="margin: 0;">Follower Growth Rate</h4>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Target: +2-5% monthly</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">New followers gained minus unfollows, as percentage of total followers</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4 style="margin: 0;">Engagement Rate</h4>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Target: 2-5%</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">(Likes + Comments + Shares) ÷ Impressions × 100</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4 style="margin: 0;">Post Reach</h4>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Target: 30-60% of followers</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Unique members who saw your posts divided by follower count</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4 style="margin: 0;">Click-Through Rate (CTR)</h4>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Target: 1-3%</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Clicks on links divided by impressions</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h4 style="margin: 0;">Posting Frequency</h4>
+                            <span style="color: var(--text-secondary); font-size: 14px;">Target: Varies by page type</span>
+                        </div>
+                        <p style="font-size: 14px; color: var(--text-secondary); margin: 0;">Company: 2-3x/week | Showcase: 2-3x/week | Product: 1-2x/month | Service: 2-4x/month</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Plan Template -->
+            <section style="margin-top: 64px;">
+                <h2>Performance Recovery Action Plan</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 24px;">If multiple alerts are triggered, use this 30-day recovery plan</p>
+
+                <div class="alert-category">
+                    <h3>Week 1: Assessment & Quick Wins</h3>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 2;">
+                        <li>Audit last 30 posts - identify top 5 and bottom 5 by engagement</li>
+                        <li>Create 10 posts based on successful content patterns</li>
+                        <li>Schedule posts for consistent timing (same days/times weekly)</li>
+                        <li>Invite team members to engage with posts within first hour</li>
+                    </ul>
+
+                    <h3 style="margin-top: 24px;">Week 2-3: Content Optimization</h3>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 2;">
+                        <li>Test 3 different content formats (video, carousel, long-form text)</li>
+                        <li>Increase thought leadership content to 40% of posts</li>
+                        <li>Add clear CTAs to every post (question, poll, opinion request)</li>
+                        <li>Respond to all comments within 2 hours</li>
+                    </ul>
+
+                    <h3 style="margin-top: 24px;">Week 4: Analysis & Adjustment</h3>
+                    <ul style="padding-left: 24px; color: var(--text-secondary); line-height: 2;">
+                        <li>Review metrics: follower growth, engagement rate, reach</li>
+                        <li>Double down on what worked, eliminate what didn't</li>
+                        <li>Create content calendar for next 30 days</li>
+                        <li>Set up monthly performance review cadence</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="success-box" style="margin-top: 48px;">
+                <h4 style="margin-bottom: 12px;">✓ Remember:</h4>
+                <p style="margin: 0;">Performance recovery takes time. Focus on consistent improvement over 2-3 months rather than expecting overnight results. Quality content, posted consistently, with active community management will yield results.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 LinkedIn Company Page Guidance Tool - Prototype</p>
+            <p class="footer-note">This is a standalone guidance tool and is not integrated with LinkedIn's platform.</p>
+        </div>
+    </footer>
+</body>
+</html>
